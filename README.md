@@ -1,6 +1,8 @@
 # Shareme
 
+------------------------------
 **** Installing Sanity.io ****
+------------------------------
 
 Move on backend folder to instal sanity.io
 
