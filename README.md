@@ -209,13 +209,31 @@ export default App
 - Install necessary dependencies 
 * npm intall
   @sanity/client @sanity/image-url     --To connect with sanity backend
-  react-google-login                   --Google Auth
   react-icons
   react-loader-spinner
   react-masonry-css                    --Allow us to create a image grid, all one next another
   react-router-dom
   uuid                                 --Allow us to create unique identifiers
-
+  @react-oauth/google                  --Google Auth
+  jwt-decode                           --Allow get data from google login
 
 - npm start
+
+------------------------
+**** Adding routing ****
+------------------------
+
+- On 'shareme_frontend/src/index.js' import: 'BrowserRouter'
+- Wrapp the <App /> tag on <BrowserRouter></BrowserRouter> tag
+
+- On 'shareme_frontend/src/App.js' import: 'Routes, Route, useNavigation'
+
+----------------------
+**** Google Login ****
+----------------------
+
+- Import 'GoogleOAuthProvider'
+- Wrap with <GoogleOAuthProvider></GoogleOAuthProvider> tag 
+- Go to console.cloud.google.com
+
 -----------------------------------------------
