@@ -1,14 +1,13 @@
 import React from "react"
-import { GoogleOAuthProvider } from '@react-oauth/google'
+import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google'
 import useNavigate from 'react-router-dom'
-import FcLogo from 'react-icons/fc'
-import logo from '../assets/logo.png'
+import logo from '../assets/logowhite.png'
 import shareVideo from '../assets/share.mp4'
 
 const Login = () => {
     return (
-        <div className="flex justify-start items-center flex-col h-screem">
-            <div className="relative w-full h-full">
+        <div className="flex justify-start items-center flex-col h-screen">
+            <div className="w-full h-full">
                 <video
                     src={shareVideo}
                     type="video/mp4"
@@ -19,10 +18,24 @@ const Login = () => {
                     className="w-full h-full object-cover"
                 />
             </div>
-        </div>
-        //     <GoogleOAuthProvider clientId="153407916024-9pb9u6kgbbciug3o74q8l0pprdh7ba6u.apps.googleusercontent.com">
 
-        //     </GoogleOAuthProvider>
+            <div className="absolute flex flex-col justify-center top-0 right-0 left-0 bottom-0 items-center bg-blackOverlay">
+                <img src={logo} width="130px" alt="logo" />
+                <div className="p-5">
+                    <GoogleOAuthProvider
+                        clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}>
+                        <GoogleLogin
+                            onSuccess={response => {
+                                console.log(response)
+                            }}
+                            onError={error => {
+                                console.log(error)
+                            }} />
+                    </GoogleOAuthProvider>
+                </div>
+            </div>
+        </div >
+
     )
 }
 

@@ -234,6 +234,7 @@ export default App
 
 - Import 'GoogleOAuthProvider'
 - Wrap with <GoogleOAuthProvider></GoogleOAuthProvider> tag 
-- Go to console.cloud.google.com
+- Go to console.cloud.google.com to get the ClientId
+- Import '<GoogleLogin /> tag inner '<GoogleOAuthProvider></GoogleOAuthProvider> tag '
 
 -----------------------------------------------

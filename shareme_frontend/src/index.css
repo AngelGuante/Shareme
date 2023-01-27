@@ -4,10 +4,6 @@
 
 body {
     font-family: 'Lato', sans-serif;
-}
-
-
-/* Hide scrollbar */
-.hide-scrollbar::-webkit-scrollbar {
-    display: none;
+    /* Hide scrollbar */
+    overflow: hidden;
 }
