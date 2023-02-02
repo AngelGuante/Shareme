@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import logo from '../assets/logowhite.png'
 import shareVideo from '../assets/share.mp4'
 import jwt_decode from 'jwt-decode'
-import sanityClientApi from '../utils/sanityClienteApi'
+import sanityClientApi from '../utils/Sanity/sanityClienteApi'
 
 const Login = () => {
     const navidate = useNavigate()
@@ -19,7 +19,7 @@ const Login = () => {
                 image: decoded['picture']
             }
 
-            console.log(user)
+            localStorage.setItem('user', JSON.stringify(decoded))
             sanityClientApi.createIfNotExists(user)
                 .then(() => {
                     navidate('/', { replace: true })
